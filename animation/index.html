@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Animation </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+
+<style>
+    /*@keyframes example {*/
+        /*from { background-color: red}*/
+        /*to { background-color: yellow}*/
+    /*}
+    from means 0%
+    to means 100%
+    */
+
+    @keyframes example {
+        0% { background-color: red; left: 0; top: 0}
+        25% { background-color: yellow; left: 200px; top: 0}
+        50% { background-color: blue; left: 200px; top: 200px; }
+        75% { background-color: green; left: 0; top: 200px;}
+        100% { background-color: deeppink; left: 0; top: 0 }
+    }
+
+    div{
+        width: 100px;
+        height: 100px;
+        position: relative;
+        background-color: red;
+        animation-name: example;
+        animation-duration: 4s;
+        animation-delay: 1s; /* animation delay property specifies a delay for the start of an animation;
+                                Negative values are also allowed. If using negative values,
+                                the animation will start as if it had already been playing for N seconds.*/
+        animation-iteration-count: 1; /* Set How Many Times an Animation Should Run: infinite value for continues animation */
+        /*animation-direction: reverse; */
+        animation-timing-function: ease-in-out; /* Specify the Speed Curve of the Animation */
+        animation-fill-mode: forwards;
+        /*Specify the fill-mode For an Animation*/
+    }
+
+    /*
+
+    *
+</style>
+
+<div></div>
+
+
+</body>
+</html>
