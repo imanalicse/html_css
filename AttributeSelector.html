@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Attribute selectors</title>
+    <style>
+        .ticket_type_wrap {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li class="hello">Ishak</li>
+        <li class="ticket_type_hello_world ticket_type_wrap"> Hello world</li>
+        <li class="ticket_type_proxima_centauri_two ticket_type_wrap">Proxima centauri</li>
+        <li>Hi</li>
+    </ul>
+</body>
+</html>
+[attr] - Represents elements with an attribute name of attr. <br>
+[attr=value] - exactly value <br>
+[attr~=value] - exactly value <br>
+[attr^=value] - prefixed by value <br>
+[attr$=value] - suffixed by value <br>
+[attr*=value] - value contains at least one occurrence of value within the string <br>
+
+<!--https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors-->
