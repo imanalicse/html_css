@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Scope</title>
+</head>
+<body>
+    <div id="context">
+        <div id="element-1">
+            <div id="element-1.1">1.1</div>
+            <div id="element-1.2">1.2</div>
+        </div>
+        <div id="element-2">
+            <div id="element-2.1">2.1</div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    /** Direct children  */
+    const context = document.getElementById('context');
+    const selected = context.querySelectorAll(':scope > div');
+    console.log(selected)
+</script>
