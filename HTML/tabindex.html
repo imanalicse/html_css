@@ -1,0 +1,43 @@
+<!--
+The tabindex global attribute indicates that its element can be focused,
+and where it participates in sequential keyboard navigation (usually with the Tab key, hence the name).
+
+The tabindex attribute must not be specified on <dialog> elements and should not be used on non-interactive content.
+If you set the tabindex attribute on a <div>, then its child content cannot be scrolled with the arrow keys unless you
+set tabindex on the content
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tabindex</title>
+</head>
+<body>
+<p>Click anywhere in this pane, then try tabbing through the elements.</p>
+
+<label>First in tab order:<input type="text"></label>
+<div tabindex="-1">tabindex 5.</div>
+<div tabindex="0">tabindex 0.</div>
+
+
+<div>Not tabbable: no tabindex.</div>
+
+<label>Third in tab order:<input type="text"></label>
+</body>
+</html>
+
+<style>
+  p {
+    font-style: italic;
+    font-weight: bold;
+}
+div,
+label {
+    display: block;
+    letter-spacing: 0.5px;
+    margin-bottom: 1rem;
+}
+div:focus {
+    font-weight: bold;
+}
+</style>
