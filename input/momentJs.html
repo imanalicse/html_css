@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Date</title>
+    <style>
+        input {
+            position: relative;
+            width: 150px; height: 20px;
+            color: white;
+        }
+
+        input:before {
+            position: absolute;
+            top: 3px; left: 3px;
+            content: attr(data-date);
+            display: inline-block;
+            color: black;
+        }
+
+        input::-webkit-datetime-edit, input::-webkit-inner-spin-button, input::-webkit-clear-button {
+            display: none;
+        }
+
+        input::-webkit-calendar-picker-indicator {
+            position: absolute;
+            top: 3px;
+            right: 0;
+            color: black;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<form id="test_form">
+    <input type="text" name="first_name"> <br>
+yyyy/mm/dd: <input type="date" name="date1" data-date="" data-date-format="YYYY/MM/DD"> <br>
+MM/DD/YYYY: <input type="date" name="date2" data-date="" data-date-format="MM/DD/YYYY">
+<br>
+<button type="submit">Submit</button>
+</form>
+</body>
+<script>
+    document.querySelectorAll("input[type=date]").forEach(dateField => {
+       dateField.addEventListener("change", function () {
+            dateField.setAttribute(
+                "data-date",
+                moment(dateField.value, "YYYY-MM-DD")
+                .format( dateField.getAttribute("data-date-format") )
+            )
+            console.log(dateField.value)
+       })
+    });
+    document.getElementById("test_form").addEventListener('submit', function (ev) {
+        ev.preventDefault();
+        const fd = new FormData(document.getElementById("test_form"))
+        console.log(fd)
+        for (const {field, value} of fd) {
+            console.log(field + ': ', value);
+        }
+    })
+    console.log('moment', moment)
+    // $("input[type=date]").on("change", function() {
+    //     this.setAttribute(
+    //         "data-date",
+    //         moment(this.value, "YYYY-MM-DD")
+    //         .format( this.getAttribute("data-date-format") )
+    //     )
+    //     console.log(this.value)
+    // });
+</script>
+</html>
